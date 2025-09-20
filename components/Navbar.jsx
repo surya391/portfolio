@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { assets } from '@/assets/assets'
 import React,{ useRef } from 'react'
 {/*39:16*/}
+{/*39:16*/}
+
 const Navbar = () => {
   const sizeMenuRef = useRef();
   const openMenu = () =>{

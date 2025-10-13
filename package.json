@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
+  "dev": "pnpm next dev",
+  "build": "pnpm next build",
+  "start": "pnpm next start",
+  "lint": "pnpm eslint",
+  "storybook": "pnpm storybook dev -p 6006",
+  "build-storybook": "pnpm storybook build"
+},
   "dependencies": {
     "next": "15.5.3",
     "postcss": "^8.5.6",

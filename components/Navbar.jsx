@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { assets } from '@/assets/assets'
 import React,{ useRef } from 'react'
-{/*39:16*/}
+{/*39:16, 1:10:09*/}
 
 const Navbar = () => {
   const sizeMenuRef = useRef();
@@ -55,7 +55,7 @@ const Navbar = () => {
       {/* Mobile Menu - to be implemented */}
       <ul ref={sizeMenuRef} className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500'>
         <div className='absolute top-6 right-6' onClick={closeMenu}>
-          <Image src={assets.close_black} alt='' className='w-5 cursore-pointer'/>
+          <Image src={assets.close_black} alt='' className='w-5 cursor-pointer'/>
         </div>
         <li><Link className='font-Ovo' onClick={closeMenu} href="#top">Home</Link></li>
         <li><Link className='font-Ovo' onClick={closeMenu} href="#about">About me</Link></li>

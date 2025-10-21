@@ -4,10 +4,10 @@ import Link from "next/link";
 import { assets } from "@/assets/assets";
 import React, { useEffect, useRef, useState } from "react";
 {
-  /*39:16, 1:10:09, 1:34:07*/
+  /*39:16, 1:10:09, 1:34:07 2:30:00*/
 }
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const [isScroll, SetIsScroll] = useState(false);
   const sizeMenuRef = useRef();
   const openMenu = () => {
@@ -27,17 +27,19 @@ const Navbar = () => {
   }, []);
   return (
     <>
-      <div className="fixed top-0 right-0 w-11/2 -z-10 translate-y-[-80%]">
+      <div className="fixed top-0 right-0 w-11/2 -z-10 translate-y-[-80%] dark:hidden">
         <Image src={assets.header_bg_color} alt="" className="w-full" />
       </div>
       <nav
         className={`w-full fixed top-0 left-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
-          isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm" : ""
+          isScroll
+            ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
+            : ""
         }`}
       >
         <Link href="#top">
           <Image
-            src={assets.logo}
+            src={isDarkMode ? assets.logo_dark : assets.logo}
             className="w-28 cursor-pointer mr-14"
             alt="Website Logo"
           />
@@ -76,8 +78,12 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-4">
-          <button>
-            <Image src={assets.moon_icon} alt="" className="w-6" />
+          <button onClick={() => setIsDarkMode((prev) => !prev)}>
+            <Image
+              src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+              alt=""
+              className="w-6"
+            />
           </button>
           <Link
             href="#contact"
